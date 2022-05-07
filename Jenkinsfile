@@ -1,6 +1,6 @@
 pipeline {
-  node('linux') {
-    // some block
+  agent {
+    label 'linux'
   }
 
   tools {
