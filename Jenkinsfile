@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Deploy to Tomcat') {
       steps {
-        tomcatDeploy(["172.31.13.38","172.31.13.38","172.31.13.38"],"ec2-user","tomcat-dev")
+        tomcatDeploy(["10.20.0.152"],"ec2-user","tomcat-dev")
       }
     }
   }
