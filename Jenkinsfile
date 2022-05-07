@@ -1,5 +1,7 @@
 pipeline {
-  agent linux
+  node('linux') {
+    // some block
+  }
 
   tools {
     maven 'maven3'
