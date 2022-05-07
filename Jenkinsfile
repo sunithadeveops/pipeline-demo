@@ -1,6 +1,5 @@
-@Library("app-lib") _
 pipeline {
-  agent any
+  agent linux
 
   tools {
     maven 'maven3'
