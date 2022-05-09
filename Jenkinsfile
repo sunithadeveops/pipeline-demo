@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Deploy to Dev Tomcat') {
       steps {
-        tomcatDeploy('http://13.126.34.96','app','tomcat-dev')
+        tomcatDeploy('http://13.126.34.96','app','tomcat')
       }
     }
   }
