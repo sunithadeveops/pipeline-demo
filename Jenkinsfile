@@ -1,4 +1,4 @@
-@Library("javahome-libs") _
+@Library("sharedlibrary") _
 pipeline {
   agent {
         label 'linux'
