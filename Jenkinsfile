@@ -1,4 +1,3 @@
-@Library("sharedlibrary") _
 pipeline {
   agent {
         label 'linux'
