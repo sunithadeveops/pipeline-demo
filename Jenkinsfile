@@ -9,7 +9,7 @@
           sh 'mvn clean package'
       }
     }
-    stage('Deploy to Dev Tomcat') {
+    stage('Deploy to Tomcat') {
       steps {
         tomcatDeploy('172.31.0.67','app','tomcat')
       }
