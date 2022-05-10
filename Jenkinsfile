@@ -1,17 +1,24 @@
-
 pipeline {
   agent {
-        label 'linux1'
+        label 'linux'
     }
+
     stages {
       stage('Maven Build') {
         steps {
           sh 'mvn clean package'
       }
     }
-    stage('Deploy to Dev Tomcat') {
+     stage('Deploy to Tomcat') {
       steps {
-        tomcatDeploy('13.126.34.96','app','tomcat')
+        sshagent(['tomcat']) {
+            // Copy war file to tomcat server
+            sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.0.67:/opt/tomcat8/webapps/app.war'
+            // stopt tomcat
+            sh "ssh ec2-user@172.31.0.67 /opt/tomcat8/bin/shutdown.sh"
+            // start tomcat
+            sh "ssh ec2-user@172.31.0.67 /opt/tomcat8/bin/startup.sh"
+        }
       }
     }
   }
