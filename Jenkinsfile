@@ -1,5 +1,5 @@
 @Library("sharedlibrary") _
-pipeline {
+ pipeline {
   agent {
         label 'linux1'
     }
