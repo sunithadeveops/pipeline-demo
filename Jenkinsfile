@@ -1,7 +1,6 @@
-@Library("sharedlibrary") _
 pipeline {
   agent {
-        label 'linux'
+        label 'linux1'
     }
     stages {
       stage('Maven Build') {
