@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Deploy to Dev Tomcat') {
       steps {
-        tomcatDeploy('10.20.0.152','app','tomcat')
+        tomcatDeploy('172.31.0.67','app','tomcat')
       }
     }
   }
